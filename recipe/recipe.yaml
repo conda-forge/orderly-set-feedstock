@@ -1,6 +1,7 @@
 context:
   name: orderly-set
   version: 5.2.3
+  python_min: "3.9"
 
 package:
   name: ${{ name|lower }}
