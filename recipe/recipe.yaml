@@ -1,0 +1,42 @@
+context:
+  name: orderly-set
+  version: 5.2.3
+  python_min: "3.9"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/orderly_set-${{ version }}.tar.gz
+  sha256: 571ed97c5a5fca7ddeb6b2d26c19aca896b0ed91f334d9c109edd2f265fb3017
+
+build:
+  number: 1
+  noarch: python
+  script: python -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - orderly_set
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: Orderly set
+  license: MIT
+  license_file: MIT-LICENSE
+  homepage: https://github.com/seperman/orderly-set
+
+extra:
+  recipe-maintainers:
+    - synapticarbors
