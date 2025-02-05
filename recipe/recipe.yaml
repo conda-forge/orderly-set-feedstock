@@ -1,7 +1,6 @@
 context:
   name: orderly-set
-  version: 5.2.3
-  python_min: "3.9"
+  version: 5.3.0
 
 package:
   name: ${{ name|lower }}
@@ -9,16 +8,16 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/orderly_set-${{ version }}.tar.gz
-  sha256: 571ed97c5a5fca7ddeb6b2d26c19aca896b0ed91f334d9c109edd2f265fb3017
+  sha256: 80b3d8fdd3d39004d9aad389eaa0eab02c71f0a0511ba3a6d54a935a6c6a0acc
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: python -m pip install . -vv
 
 requirements:
   host:
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - setuptools
   run:
@@ -29,7 +28,7 @@ tests:
       imports:
         - orderly_set
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version: ${{ python_min }}.*
 
 about:
   summary: Orderly set
