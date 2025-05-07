@@ -1,6 +1,6 @@
 context:
   name: orderly-set
-  version: "5.4.0"
+  version: "5.4.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/orderly_set-${{ version }}.tar.gz
-  sha256: c8ff5ba824abe4eebcbbdd3f646ff3648ad0dd52239319d90056d8d30b6cccdd
+  sha256: a1fb5a4fdc5e234e9e8d8e5c1bbdbc4540f4dfe50d12bf17c8bc5dbf1c9c878d
 
 build:
   number: 0
