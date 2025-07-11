@@ -19,7 +19,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - flit-core >=3.2,<4
   run:
     - python >=${{ python_min }}
 
